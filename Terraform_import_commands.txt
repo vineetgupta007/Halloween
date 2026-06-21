@@ -1,0 +1,59 @@
+terraform import -var-file="kpmg_terraform.tfvars" 'module.endpoints.saviynt_endpoint_resource.this["AshburnUnix"]' AshburnUnix
+terraform import -var-file="kpmg_terraform.tfvars" 'module.endpoints.saviynt_endpoint_resource.this["AshburnLogon"]' AshburnLogon
+terraform import -var-file="kpmg_terraform.tfvars" 'module.endpoints.saviynt_endpoint_resource.this["Ping_OAuth_GEV_Endpoint"]' Ping_OAuth_GEV_Endpoint
+terraform import -var-file="kpmg_terraform.tfvars" 'module.endpoints.saviynt_endpoint_resource.this["Ping_OAuth_KPMG_Endpoint"]' Ping_OAuth_KPMG_Endpoint
+
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.ad_connection["AshburnLogon"].saviynt_ad_connection_resource.ad_connection' \
+  "AshburnLogon"
+  
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.ldap_connection["AshburnUnix"].saviynt_ad_connection_resource.ldap_connection' \
+  "AshburnUnix"
+
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.oauth_rest_connection["Ping_OAuth_GEV"].saviynt_rest_connection_resource.rest_connection' \
+  "Ping_OAuth_GEV"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.oauth_rest_connection["Ping_OAuth_KPMG"].saviynt_rest_connection_resource.rest_connection' \
+  "Ping_OAuth_KPMG"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.rest_connection["PINGDIR_DEV"].saviynt_rest_connection_resource.rest_connection' \
+  "PINGDIR_DEV"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.sec_system_std["AshburnLogon"].saviynt_security_system_resource.this' \
+  "AshburnLogon"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.sec_system_std["AshburnUnix"].saviynt_security_system_resource.this' \
+  "AshburnUnix"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.sec_system_std["Ping_OAuth_GEV"].saviynt_security_system_resource.this' \
+  "Ping_OAuth_GEV"
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.sec_system_std["Ping_OAuth_KPMG"].saviynt_security_system_resource.this' \
+  "Ping_OAuth_KPMG"
+  
+  
+  terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.entitlement_types["Ping_OAuth_GEV_Parent"].saviynt_entitlement_type_resource.entitlement_type' \
+  "Ping_OAuth_GEV_Endpoint:Parent"
+
+
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.entitlement_types["Ping_OAuth_GEV_Group"].saviynt_entitlement_type_resource.entitlement_type' \
+  "Ping_OAuth_GEV_Endpoint:Group"
+
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.entitlement_types["Ping_OAuth_KPMG_Parent"].saviynt_entitlement_type_resource.entitlement_type' \
+  "Ping_OAuth_KPMG_Endpoint:Parent"
+
+terraform import -var-file="kpmg_terraform.tfvars" \
+  'module.entitlement_types["Ping_OAuth_KPMG_Group"].saviynt_entitlement_type_resource.entitlement_type' \
+  "Ping_OAuth_KPMG_Endpoint:Group"
+  
